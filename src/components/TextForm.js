@@ -18,8 +18,13 @@ export default function TextForm(props) {
 
     const textLen=(str) => {
         let len=str.split(" ");
-        return len[len.length]==" "? len.length:len.length-1;
-
+        let count=0;
+        for (let i=0; i<len.length; i++) {
+            if (len[i]!='') {
+                count+=1;
+            }
+        }
+        return count;
     }
     const [text,setText]=useState('');
     return (
